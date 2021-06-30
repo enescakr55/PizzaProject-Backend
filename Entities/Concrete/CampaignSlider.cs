@@ -1,0 +1,17 @@
+﻿using Entities.Abstract;
+using System;
+using System.Collections.Generic;
+using System.Text;
+
+namespace Entities.Concrete
+{
+    public class CampaignSlider:IEntity
+    {
+        public int Id { get; set; }
+        public int PizzaId { get; set; }
+        public string ImageUrl { get; set; }
+        public string Description { get; set; }
+        public string Title { get; set; }
+
+    }
+}
