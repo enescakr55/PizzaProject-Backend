@@ -10,8 +10,8 @@ namespace DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            //optionsBuilder.UseSqlServer(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=PizzasDatabase;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-           optionsBuilder.UseSqlServer(@"Server=sql.bsite.net\MSSQL2016;Database=qqwerty123_pizzadb;uid=qqwerty123_pizzadb;pwd=123456789aA.;");
+            optionsBuilder.UseSqlServer(@"BURAYA SQL BAĞLANTI DİZESİ GELECEK");
+            
         }
 
         public DbSet<Pizza> Pizzas { get; set; }

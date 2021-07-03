@@ -36,8 +36,6 @@ namespace WebApi
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddHttpContextAccessor();
-            
-
             services.AddControllers();
             services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
             services.AddSingleton<IPizzaService, PizzaManager>();
@@ -113,15 +111,6 @@ namespace WebApi
 
             app.UseDefaultFiles(new DefaultFilesOptions { DefaultFileNames = new List<string> { "index.html" } });
             app.UseStaticFiles();
-            //var staticFilePath = Directory.GetParent(Environment.CurrentDirectory) + "\\PizzaImg\\";
-            /*var staticFilePath = "\\PizzaImg\\";
-            app.UseStaticFiles(new StaticFileOptions
-            {
-                FileProvider = new PhysicalFileProvider(
-                staticFilePath),
-                RequestPath = "/PizzaImg"
-            }); */
-
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

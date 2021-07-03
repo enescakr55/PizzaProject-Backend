@@ -10,10 +10,10 @@ namespace Business.ValidationRules.FluentValidation
     {
         public SliderValidation()
         {
-            RuleFor(p => p.Description).NotEmpty();
-            RuleFor(p => p.ImageUrl).NotEmpty();
-            RuleFor(p => p.PizzaId).NotEmpty();
-            RuleFor(p => p.Title).NotEmpty();
+            RuleFor(p => p.Description).NotEmpty().WithMessage("Açıklama boş olamaz");
+            RuleFor(p => p.ImageUrl).NotEmpty().WithMessage("Resim Adresi boş olamaz");
+            RuleFor(p => p.PizzaId).NotEmpty().WithMessage("Lütfen bir pizza seçin");
+            RuleFor(p => p.Title).NotEmpty().WithMessage("Slider başlığı boş olamaz");
         }
     }
 }
