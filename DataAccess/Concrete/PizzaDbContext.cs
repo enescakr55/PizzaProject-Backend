@@ -10,8 +10,7 @@ namespace DataAccess.Concrete
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"BURAYA SQL BAĞLANTI DİZESİ GELECEK");
-            
+            optionsBuilder.UseSqlServer(@"Buraya mssql bağlantı dizesi yazılacak") // MSSQL Bağlantı dizesi
         }
 
         public DbSet<Pizza> Pizzas { get; set; }

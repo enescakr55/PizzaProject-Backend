@@ -94,7 +94,21 @@ namespace WebApi.Controllers
             }
             return BadRequest(result);
 
-        } 
+        }
+        [HttpPost("changepassword")]
+        public IActionResult ChangePassword(ChangePasswordDto changePasswordDto)
+        {
+            _authService.setHeader(Request.Headers);
+            var getId = _authService.GetUserIdBySessionKey();
+            var getUser = _userService.GetByUserId(getId.Data);
+            var result = _userService.ChangePassword(changePasswordDto, getUser.Data);
+            if (result.Success)
+            {
+                return Ok(result);
+            }
+            return BadRequest(result);
+
+        }
 
     }
 }

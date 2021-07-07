@@ -4,6 +4,7 @@ using Business.ValidationRules.FluentValidation;
 using Core.Results;
 using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using FluentValidation.Results;
 using System;
 using System.Collections.Generic;
@@ -99,6 +100,31 @@ namespace Business.Concrete
             } 
 
 
+        }
+
+        public IResult ChangePassword(ChangePasswordDto changePasswordDto, User user)
+        {
+            ChangePasswordValidation validator = new ChangePasswordValidation();
+            var result = validator.Validate(changePasswordDto);
+            if (result.IsValid)
+            {
+                var getUser = _userDal.Get(p => p.Id == user.Id);
+                var oldpasswordmd5 = Crypter.CreateMD5(changePasswordDto.OldPassword);
+                if (getUser.Password.ToLower() == oldpasswordmd5.ToLower())
+                {
+                    
+                    var newUser = getUser;
+                    newUser.Password = Crypter.CreateMD5(changePasswordDto.NewPassword);
+                    _userDal.Update(newUser);
+                    return new SuccessResult("Şifre başarıyla değiştirildi");
+                }
+            }
+            else
+            {
+                return new ErrorDataResult<List<ValidationFailure>>(result.Errors);
+            }
+
+            return new ErrorResult("Şifre değiştirilemedi");
         }
     }
 }
