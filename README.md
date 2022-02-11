@@ -13,7 +13,7 @@ girdi doğrulama için Fluent Validation kullanılmıştır.
 - Kullanıcılar pizzaları kategoriye, boyuta ve ismine göre filtreleyebilir.
 - Kullanıcılar pizzalara yorum yapabilir ve lezzet puanı verebilir.
 - Yetkili hesaba sahip kişiler, toplam kazanç, toplam alınan sipariş sayısı, toplam satılan 
-- ürün sayısı, en çok satılan ürün, en az satılan ürün gibi site istatistiklerini görebilirler.
+- Ürün sayısı, en çok satılan ürün, en az satılan ürün gibi site istatistiklerini görebilirler.
 - Yetkili hesaba sahip kişiler verilen siparişleri görebilir ve mevcut durumunu güncelleyebilirler.
 - Yetkili hesaba sahip kişiler pizza listeleme sayfasına üzerine tıklayınca bir pizzanın detay sayfasına yönlendirecek bir slider ve slidere açıklama ekleyebilirler.
 - Yetkili hesaba sahip kişiler sisteme yeni kategori, durum ve pizza boyutu ekleyip silebilirler.
